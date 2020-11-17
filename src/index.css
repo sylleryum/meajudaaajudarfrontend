@@ -1,0 +1,406 @@
+/*body {*/
+/*  margin: 0;*/
+/*  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
+/*    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
+/*    sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*}*/
+
+/*code {*/
+/*  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
+/*    monospace;*/
+/*}*/
+:root {
+    --color1: #f18f01;
+    --color2: #048BA8;
+    --color3: #2E4057;
+    --color4: #99C24D;
+    --color5: #2F2D2E;
+}
+
+.square {
+    width: 50vh;
+    height: 50vh;
+    background-color: var(--color5);
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--color4);
+    background-color: var(--color3);
+}
+
+html {
+    scroll-padding-top: 64px; /* fixed nav-bar offset */
+}
+
+/*fix mobile right margin*/
+html, body {
+    overflow-x: hidden;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(153, 194, 77, 0.29);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(153, 194, 77, 0.29);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(153, 194, 77, 0.29);
+}
+
+input[type="text"], select {
+    color: var(--color4);
+    background-color: var(--color5);
+}
+
+.nav-link:not(.tabs) {
+    text-decoration: none;
+    color: var(--color1)!important;
+
+}
+
+.nav-link:not(#doar){
+    text-shadow: -1px 0 var(--color3), 0 1px var(--color3), 1px 0 var(--color3), 0 -1px var(--color3);
+}
+
+.sub {
+    text-shadow: -1px 0 var(--color5), 0 1px var(--color5), 1px 0 var(--color5), 0 -1px var(--color5);
+}
+
+.active {
+    font-weight: bold;
+}
+
+.form-text {
+    border: none;
+    padding: 4px;
+    border: solid 1px var(--color1);
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 10pt;
+    text-align: left;
+    outline: none;
+}
+
+#searchSubmit:hover {
+    background-color: #935301 !important;
+}
+
+.bg-1 {
+    background-color: var(--color1) !important;
+}
+
+.bg-2 {
+    background-color: var(--color2) !important;
+}
+
+.bg-3 {
+    background-color: var(--color3) !important;
+}
+
+.bg-4 {
+    background-color: var(--color4) !important;
+}
+
+.bg-5 {
+    background-color: var(--color5) !important;
+}
+
+.bg-w {
+    background-color: white !important;
+}
+
+.text-1 {
+    color: var(--color1) !important;
+}
+
+.text-2 {
+    color: var(--color2) !important;
+}
+
+.text-3 {
+    color: var(--color3) !important;
+}
+
+.text-4 {
+    color: var(--color4) !important;
+}
+
+.text-5 {
+    color: var(--color5) !important;
+}
+
+.text-w {
+    color: white !important;
+}
+
+.nav-link.active {
+    background-color: var(--color5) !important;
+    border-color: var(--color2) !important;
+    color: var(--color2) !important;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid var(--color2) !important;
+}
+
+.nav-link:hover {
+    border-color: var(--color2) !important;
+}
+
+a {
+    color: var(--color2);
+    text-decoration: underline;
+}
+
+.icons:hover {
+    color: #61dafb !important;
+}
+
+@media screen and (max-width: 767px) {
+    .mobile-header {
+        font-size: 2em !important;
+    }
+
+    #navbar {
+        background: linear-gradient(to bottom, rgba(241, 143, 1, 0.7), rgba(241, 143, 1, 0.30), rgba(241, 143, 1, 0))
+    }
+}
+
+.mobile-h-desc {
+    display: inline-block;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+    .mobile-h-desc {
+        font-size: 1rem !important;
+    }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 800px) {
+    .margin-jumbotron-desktop {
+        height: 50vh;
+    }
+}
+
+ve
+.breadcrumb-background {
+    background-color: var(--color2);
+    background-repeat: no-repeat;
+    min-height: 10vh;
+}
+
+@media screen and (max-width: 767px) {
+    .breadcrumb-background {
+        overflow: auto;
+        min-height: 100%;
+        position: relative;
+    }
+}
+
+.text-breadcrumb {
+    color: var(--color2);
+    text-shadow: -1px 0 var(--color3), 0 1px var(--color3), 1px 0 var(--color3), 0 -1px var(--color3);
+}
+
+.btn-primary {
+    background-color: var(--color1) !important;
+    border-color: var(--color1) !important;
+    color: var(--color3) !important;
+}
+
+.btn-primary:hover {
+    background-color: #9b5a01 !important;
+    border-color: #9b5a01 !important;
+}
+
+.btn-outline-primary {
+    border-color: var(--color1) !important;
+    color: var(--color1) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #9b5a01 !important;
+    border-color: #9b5a01 !important;
+}
+
+/*jumbotron START*/
+@media screen and (max-width: 767px) {
+    .mobile-header {
+        font-size: 2em !important;
+    }
+}
+
+.jumbotron-image1 {
+    background: linear-gradient(to bottom, rgba(241, 143, 1, 0.7), rgba(241, 143, 1, 0)), url(images/home/handsSmall.jpg) center/cover no-repeat fixed;
+}
+
+/*.jumbotron-image2 {*/
+/*    background: linear-gradient(to bottom, rgba(241, 143, 1, 0.7), rgba(241, 143, 1, 0.30), rgba(241, 143, 1, 0)), url(images/home/heartSmall.jpg) center/cover no-repeat fixed;*/
+/*}*/
+
+.jumbotron-image2 {
+    background: linear-gradient(to bottom, rgba(241, 143, 1, 0.7), rgba(241, 143, 1, 0.30), rgba(241, 143, 1, 0)), url(images/home/medicSmall.jpg) center/cover no-repeat fixed;
+}
+
+.jumbotron-image3 {
+    background: linear-gradient(to bottom, rgba(241, 143, 1, 0.7), rgba(241, 143, 1, 0.30), rgba(241, 143, 1, 0)), url(images/home/raisingChildSmall.jpg) center/cover no-repeat fixed;
+}
+
+/*jumbotron END*/
+
+.btn-colour-1:hover,
+.btn-colour-1:active,
+.btn-colour-1:focus,
+.btn-colour-1.active {
+    background: #EE9C69 !important;
+    color: #ffffff;
+    border-color: #EE9C69 !important;
+}
+
+.height-100 {
+    min-height: 100vh;
+}
+
+.height-20 {
+    height: 20vh;
+}
+
+.height-6 {
+    height: 6vh;
+}
+
+.height-5 {
+    height: 5vh;
+}
+
+.separator {
+    width: 30vh;
+    height: 3px;
+    margin: 0 auto;
+}
+
+
+/********************cards collapse********************/
+
+.module .collapse, .module .collapsing {
+    height: 6rem; /* [NUM_OF_LINES] x [LINE_HEIGHT] */
+}
+
+.module .collapse {
+    position: relative; /* For ...'s content absolute positioning */
+    display: block;
+    overflow: hidden;
+}
+
+.module .collapse:before {
+    content: ' ...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.module .collapse.show {
+    height: auto; /* You need to reset the height when not collapsed */
+}
+
+.module .collapse.show:before {
+    display: none; /* Of course you don't want to display ... */
+}
+
+/********************END cards collapse********************/
+
+/********************card start*******************/
+#card-container span {
+    font-size: 15px;
+}
+
+#card-container .box {
+    padding: 60px 0px;
+}
+
+#card-container .box-part {
+    background: #FFF;
+    border-radius: 0;
+    padding: 60px 10px;
+    margin: 30px 0px;
+}
+
+#card-container .text {
+    margin: 20px 0px;
+}
+
+#card-container .fa {
+    color: #4183D7;
+}
+
+/*card hover effect*/
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+/*card hover effect end*/
+
+/*card-container end*/
+
+.banner-image-1 {
+    background-image: url(./images/banner/african.jpg);
+    background-repeat: no-repeat;
+}
+
+.banner-image-2 {
+    background-image: url(./images/banner/children.jpg);
+    background-repeat: no-repeat;
+}
+
+.banner-image-3 {
+    background-image: url(./images/banner/class.jpg);
+    background-repeat: no-repeat;
+}
+
+.banner-image-4 {
+    background-image: url(./images/banner/dogs.jpg);
+    background-repeat: no-repeat;
+}
+
+.banner-image-5 {
+    background-image: url(./images/banner/elders.jpg);
+    background-repeat: no-repeat;
+}
+
+.banner-image-6 {
+    background-image: url(./images/banner/food.jpg);
+    background-repeat: no-repeat;
+}
+
+.banner-image-7 {
+    background-image: url(./images/banner/social.jpg);
+    background-repeat: no-repeat;
+}
+
+/*to stick footer to the bottom*/
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+#root {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+export const TEXT_1 = "text-1"
+export const TEXT_2 = "text-2"
+export const TEXT_3 = "text-3"
+export const TEXT_4 = "text-4"
+export const TEXT_5 = "text-5"
+
+export const BG_1 = "bg-1"
+export const BG_2 = "bg-2"
+export const BG_3 = "bg-3"
+export const BG_4 = "bg-4"
+export const BG_5 = "bg-5"
