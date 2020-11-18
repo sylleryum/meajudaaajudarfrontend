@@ -6,23 +6,23 @@ const axios = require('axios');
 
 const TOKEN_USER = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcm9udGVuZHVzZXIiLCJyb2xlIjoiUk9MRV9VU0VSIiwiZXhwIjoxNjM0MTgwNDAwfQ.VYaAEbccRpqS_-ONNR2RX0pfDFvsaa-L6mLXtUcEQCe50_HbRgM0vW7v1pqN0yChrLK1CnO8CvHGiyEV7W581g';
 const HEADER_PREFIX = 'Bearer ';
-// const ENDPOINT_HEROKU = 'https://meajudaaajudar.herokuapp.com/v1/';
-const ENDPOINT_LOCALHOST = 'https://meajudaaajudar.herokuapp.com/v1/';
-///////// const ENDPOINT_LOCALHOST = 'http://sylleryum.ddns.net:8080/v1/';
+const ENDPOINT_HEROKU = 'https://meajudaaajudar.herokuapp.com/v1/';
+const ENDPOINT_LOCALHOST = 'http://sylleryum.ddns.net:8080/v1/';
+const ENDPOINT = ENDPOINT_HEROKU;
 const {data} = require('../util/dumb');
 export const fetchResults = async () => {
     await getCidadesAtivas();
 };
 
-// TODO add error handling
+
 async function ApiCaller(resource) {
 
     let res
     try {
-        res = await axios.get(ENDPOINT_LOCALHOST + resource,
+        res = await axios.get(ENDPOINT + resource,
             {headers: {'Authorization': HEADER_PREFIX + TOKEN_USER}}
         );
-        console.log(`ApiCaller: query before call: ` + ENDPOINT_LOCALHOST + resource);
+        console.log(`ApiCaller: query before call: ` + ENDPOINT + resource);
         // console.log(`ApiCaller ok`)
         // console.log(res.data)
         return res.data
@@ -147,8 +147,8 @@ export const postDoacao = async (id) => {
     }
     let res
     try {
-        console.log(`ApiCaller: query before call: ` + ENDPOINT_LOCALHOST + "registrardoacao/");
-        res = await axios.post(ENDPOINT_LOCALHOST + "registrardoacao/",
+        console.log(`ApiCaller: query before call: ` + ENDPOINT + "registrardoacao/");
+        res = await axios.post(ENDPOINT + "registrardoacao/",
             {instituicao: id},
             {headers: {'Authorization': HEADER_PREFIX + TOKEN_USER}})
     } catch (error) {

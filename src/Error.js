@@ -1,10 +1,14 @@
 import React from 'react';
 import CardSingle from "./components/buscarPage/CardSingle";
+import {TEXT_1} from "./util/colorScheme";
 
-const Error = ({errorMessage}) => {
+const Error = ({errorMessage, descriptionMain, descriptionSub}) => {
     return (
         <div className={"row align-items-center justify-content-center height-100"}>
-        <div className={"square row align-items-center justify-content-center"}>
+        <div className={"square row align-items-center justify-content-center text-center"}>
+            <h3>Deu ruim ¯\_(ツ)_/¯</h3>
+            <span>{descriptionMain}</span>
+            <h3 className={TEXT_1}>{descriptionSub}</h3>
             <div>Erro: {errorMessage}</div>
         </div>
         </div>
@@ -13,5 +17,8 @@ const Error = ({errorMessage}) => {
 
 export default Error;
 Error.defaultProps = {
-    errorMessage:"desconhecido"
+    errorMessage:"desconhecido",
+    descriptionMain: "",
+    descriptionSub: "Nada encontrado"
+
 }

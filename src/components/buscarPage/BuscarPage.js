@@ -111,7 +111,7 @@ const BuscarPage = () => {
                                            currentPage: instituicoes.number
                                        }}>
                         {
-                            // TODO improve not found page
+
                             instituicoes.totalElements == 0 ?
                                 <div>Nenhum resultado encontrado <br/>(por favor tenha em consideração que você deve
                                     selecionar primeiramente a cidade correspondente ao nome a buscar)</div> :

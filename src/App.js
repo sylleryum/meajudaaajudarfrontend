@@ -44,8 +44,11 @@ const App = () => {
                                 <Route exact path="/busca" children={<BuscarPage/>}/>
                                 <Route exact path="/instituicao/:id" children={<InstituicaoPage/>}/>
                                 <Route exact path="/sobre" children={<AboutPage/>}/>
+                                <Route children={<Error errorMessage={"404 página não encontrada"}/>} />
                             </Switch>
-                            : <Error errorMessage={error.errorMessage}/>}
+                            : <Error errorMessage={error.errorMessage}
+                                     descriptionMain={"Nosso servidor resolveu sair para um café e ainda não voltou."}
+                                     descriptionSub={"Por favor, verifique o endereço digitado, tente atualizar a página ou volte mais tarde"}/>}
                     </ErrorContext.Provider>
                 </div>
             </Router>

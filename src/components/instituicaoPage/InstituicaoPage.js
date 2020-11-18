@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {Fragment, useContext, useEffect, useState} from 'react';
 import Breadcrumb from "../Breadcrumb";
 import {
     useParams
@@ -11,11 +11,13 @@ import {AiFillTag} from "react-icons/ai";
 import Header from "./Header";
 import Tabs from "./Tabs";
 import DefaultLoader from "../DefaultLoader";
+import {ErrorContext} from "../../App";
 
 const {data} = require('../../util/dumb');
 const COLORS = require('../../util/colorScheme');
 const InstituicaoPage = () => {
     let {id} = useParams();
+    /*context*/const {error, setError} = useContext(ErrorContext)
 
     const [instituicao, setInstituicao] = useState({
         "id": undefined,
@@ -33,13 +35,22 @@ const InstituicaoPage = () => {
     useEffect(() => {
         async function fetch() {
             //setInstituicao(await getSingleInstituicao("dumb"))
-            setInstituicao(await getSingleInstituicao(id))
+            let instituicao = await getSingleInstituicao(id);
+            if (instituicao.error != undefined) {
+                setError({
+                    error: true,
+                    errorMessage: instituicao.errorMessage
+                })
+            } else {
+                setInstituicao(instituicao)
+            }
         }
 
         fetch();
     }, [id]);
 
     return (
+        !error.error &&
         <Fragment>
             <Breadcrumb banner={instituicao.nome}/>
             <Margin5vh/>
