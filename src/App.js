@@ -1,25 +1,19 @@
 import React, {Component, Fragment, useState} from 'react';
 import './App.css';
 import Navbar from "./components/Navbar";
-import Breadcrumb from "./components/Breadcrumb";
-import Z_OLDLayoutMainSection from "./components/Z_OLDLayoutMainSection";
-import Margin5vh from "./components/Margin5vh";
-import LayoutMainSection from "./components/LayoutMainSection";
-import Category from "./components/buscarPage/Category";
-import {fetchResults, getCausasAtivasByCidadeIdAndNomeInstituicao, postDoacao} from "./api/fetchResults";
 import BuscarPage, {CidadeContext} from "./components/buscarPage/BuscarPage";
 import {createContext} from "react";
 import InstituicaoPage from "./components/instituicaoPage/InstituicaoPage";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-} from "react-router-dom";
 import HomePage from "./components/home/HomePage";
 import AboutPage from "./components/about/AboutPage";
 import Footer from "./components/Footer";
 import Error from "./Error";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 export const ErrorContext = createContext(null);
 
@@ -33,27 +27,27 @@ const App = () => {
 
 
     return (
-        <Fragment>
-            <Router>
-                <div className={"main-container"}>
-                    <Navbar ListOfLinks={headerLinks}/>
-                    <ErrorContext.Provider value={{error, setError}}>
-                        {!error.error ?
-                            <Switch>
-                                <Route exact path="/" children={<HomePage/>}/>
-                                <Route exact path="/busca" children={<BuscarPage/>}/>
-                                <Route exact path="/instituicao/:id" children={<InstituicaoPage/>}/>
-                                <Route exact path="/sobre" children={<AboutPage/>}/>
-                                <Route children={<Error errorMessage={"404 página não encontrada"}/>} />
-                            </Switch>
-                            : <Error errorMessage={error.errorMessage}
-                                     descriptionMain={"Nosso servidor resolveu sair para um café e ainda não voltou."}
-                                     descriptionSub={"Por favor, verifique o endereço digitado, tente atualizar a página ou volte mais tarde"}/>}
-                    </ErrorContext.Provider>
-                </div>
-            </Router>
+        <Router>
+            <div className={"main-container"}>
+                <Navbar ListOfLinks={headerLinks}/>
+                <ErrorContext.Provider value={{error, setError}}>
+                    {!error.error ?
+                        <Switch>
+                            <Route exact path="/" children={<HomePage/>}/>
+                            <Route exact path="/busca" children={<BuscarPage/>}/>
+                            <Route exact path="/instituicao/:id" children={<InstituicaoPage/>}/>
+                            <Route exact path="/sobre" children={<AboutPage/>}/>
+                            <Route children={<Error errorMessage={"404 página não encontrada"}/>}/>
+                        </Switch>
+                        : <Error errorMessage={error.errorMessage}
+                                 descriptionMain={"Nosso servidor resolveu sair para um café e ainda não voltou."}
+                                 descriptionSub={"Por favor, verifique o endereço digitado, tente atualizar a página ou volte mais tarde"}/>}
+                </ErrorContext.Provider>
+            </div>
+
             <Footer/>
-        </Fragment>
+
+        </Router>
     );
 };
 
