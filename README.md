@@ -1,1 +1,1 @@
-# meajudaaajudarfrontend
+permalink: /index.html
