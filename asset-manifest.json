@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.ac381aef.chunk.css",
-    "main.js": "/static/js/main.4cadc96f.chunk.js",
-    "main.js.map": "/static/js/main.4cadc96f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.21564ff8.js",
-    "runtime-main.js.map": "/static/js/runtime-main.21564ff8.js.map",
-    "static/js/2.30e36250.chunk.js": "/static/js/2.30e36250.chunk.js",
-    "static/js/2.30e36250.chunk.js.map": "/static/js/2.30e36250.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.ec79def39660129d45d65d9d3cfaed30.js": "/precache-manifest.ec79def39660129d45d65d9d3cfaed30.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.ac381aef.chunk.css.map": "/static/css/main.ac381aef.chunk.css.map",
-    "static/js/2.30e36250.chunk.js.LICENSE.txt": "/static/js/2.30e36250.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/social.a5ab4c71.jpg"
+    "main.css": "/meajudaaajudarfrontend/static/css/main.d010d156.chunk.css",
+    "main.js": "/meajudaaajudarfrontend/static/js/main.3c3348a4.chunk.js",
+    "main.js.map": "/meajudaaajudarfrontend/static/js/main.3c3348a4.chunk.js.map",
+    "runtime-main.js": "/meajudaaajudarfrontend/static/js/runtime-main.4aa79c9e.js",
+    "runtime-main.js.map": "/meajudaaajudarfrontend/static/js/runtime-main.4aa79c9e.js.map",
+    "static/js/2.30e36250.chunk.js": "/meajudaaajudarfrontend/static/js/2.30e36250.chunk.js",
+    "static/js/2.30e36250.chunk.js.map": "/meajudaaajudarfrontend/static/js/2.30e36250.chunk.js.map",
+    "index.html": "/meajudaaajudarfrontend/index.html",
+    "precache-manifest.f1e03c3af550ff7c91a9bebed1c9c437.js": "/meajudaaajudarfrontend/precache-manifest.f1e03c3af550ff7c91a9bebed1c9c437.js",
+    "service-worker.js": "/meajudaaajudarfrontend/service-worker.js",
+    "static/css/main.d010d156.chunk.css.map": "/meajudaaajudarfrontend/static/css/main.d010d156.chunk.css.map",
+    "static/js/2.30e36250.chunk.js.LICENSE.txt": "/meajudaaajudarfrontend/static/js/2.30e36250.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/meajudaaajudarfrontend/static/media/social.a5ab4c71.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.21564ff8.js",
+    "static/js/runtime-main.4aa79c9e.js",
     "static/js/2.30e36250.chunk.js",
-    "static/css/main.ac381aef.chunk.css",
-    "static/js/main.4cadc96f.chunk.js"
+    "static/css/main.d010d156.chunk.css",
+    "static/js/main.3c3348a4.chunk.js"
   ]
 }
