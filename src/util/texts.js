@@ -1,5 +1,6 @@
-export const disclaimer = 'Por favor tenha em consideração que esta opção simplesmente redireciona para a página de doação da instituição no site dela, meajudeaaajudar não tem NENHUMA responsabilidade pelo mesmo. Para mais informações verifique a seção de Sobre deste site'
+export const disclaimer = 'Por favor tenha em consideração que esta opção simplesmente redireciona para a página de doação da instituição no site dela (quando disponível), meajudeaaajudar não tem NENHUMA responsabilidade pelo mesmo. Para mais informações verifique a seção de Sobre deste site'
 export const disclaimerAbout = "Aviso: Me ajuda a ajudar se exime de qualquer responsabilidade pelas informações aqui encontradas, todos os dados são de propriedade das próprias instituições.";
+export const disclaimerInfoDoacao = "As informações aqui apresentadas foram tiradas em buscas feitas nas páginas da instituição (site/facebook/instagram...) aconselhamos que sejam comprovadas antes de realizar qualquer doação.";
 export const homePageJumboMain = "Quer doar para uma instituição séria, mas não sabe qual?"
 export const homePageJumboSub = "Nós te ajudamos a encontrá-la!"
 export const homePageExplanation = "Me ajuda a ajudar é um site 100% sem fins lucrativos que tem a missão de te ajudar a encontrar uma instituição de caridade séria que esteja de acordo com causas e locais de atuação da sua preferência."

@@ -14,7 +14,7 @@ const Paging = ({paging}) => {
     currentPage
      */
     return (
-        <div className={COLORS.TEXT_5 + " text-center font-weight-bold"}>
+        <div className={COLORS.TEXT_5 + " text-center font-weight-bold mb-5"}>
             {paging.first === false &&
             <a role={"button"}
                onClick={() => {

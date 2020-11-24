@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const COLORS = require('../../util/colorScheme');
 
@@ -16,11 +17,11 @@ const Jumbotron100vh = ({main, sub, explanation}) => {
                             <h3 className={COLORS.TEXT_2 + " lead display-4 font-weight-bold mobile-header sub"}>{sub}</h3>
                             <hr className={COLORS.BG_2 + " my-2 mb-5"}/>
                             <h4 className={COLORS.TEXT_5+" mobile-h-desc"}>{explanation}</h4>
-                            <div className={"margin-jumbotron-desktop d-flex justify-content-center align-items-end"}><a type={"button"} href={"/busca"}
+                            <div className={"margin-jumbotron-desktop d-flex justify-content-center align-items-end"}><Link type={"button"} to={"/busca"}
                                                                            className={"btn btn-outline-primary sub"} style={{textDecoration: "none", borderRadius:"0"}}>
                                 {/*// className={"display-4"}>*/}
                                 Buscar instituição
-                            </a></div>
+                            </Link></div>
 
 
                         </div>

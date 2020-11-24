@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import {FcDonate} from "react-icons/fc";
 import {v4 as uuidv4} from 'uuid';
+import {Link} from "react-router-dom";
 const COLORS = require('../util/colorScheme');
 
 /**
@@ -15,7 +16,7 @@ const Navbar = ({ListOfLinks}) => {
     return (
         <Fragment>
             <nav id={"navbar"} className={" navbar navbar-expand-sm navbar-dark text-uppercase p-0 mb-0 fixed-top"}>
-                <a className="navbar-brand pl-3" href="/"><FcDonate size={50}/></a>
+                <Link className="navbar-brand pl-3" to="/"><FcDonate size={50}/></Link>
 
                 <button className="navbar-toggler mr-3" type="button" data-toggle="collapse"
                         data-target="#navbarNavDropdown"
@@ -26,13 +27,16 @@ const Navbar = ({ListOfLinks}) => {
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav pl-2">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Me ajuda a ajudar <span className="sr-only">(current)</span></a>
+                            <Link className="nav-link" to="/">Me ajuda a ajudar <span className="sr-only">(current)</span></Link>
                         </li>
                         {
                             ListOfLinks.map(
                                 e => {
-                                    return <li key={uuidv4()} className={"nav-item"}><a className={"nav-link"} id={e[0]}
-                                                                                      href={e[1]}>{e[2]}</a></li>
+                                    return <li key={uuidv4()} className={"nav-item"}>
+                                        {/*<a className={"nav-link"} id={e[0]}*/}
+                                        {/*                                              href={e[1]}>{e[2]}</a>*/}
+                                        <Link className={"nav-link"} to={e[1]}>{e[2]}</Link>
+                                    </li>
                                 }
                             )
 

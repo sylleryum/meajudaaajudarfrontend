@@ -1,10 +1,24 @@
 import React, {Fragment} from 'react';
 import {AiFillTag} from "react-icons/ai";
 import {postDoacao} from "../../api/fetchResults";
+import CardSingle from "../buscarPage/CardSingle";
+import {checkNull} from "../../util/checkNull";
 const COLORS = require('../../util/colorScheme');
 const {disclaimer} = require('../../util/texts');
 
+
 const Header = ({instituicao}) => {
+
+    const doarLinkToggler = () =>{
+        document.getElementById("descricao").classList.remove("show","active");
+        document.getElementById("sobreInstituicao").classList.remove("show","active");
+        document.getElementById("infoDoacao").classList.add("show","active");
+        document.getElementById("tabDescricao").classList.remove("active");
+        document.getElementById("tabSobre").classList.remove("active");
+        document.getElementById("tabDoar").classList.add("active");
+        // active show
+    }
+
     return (
         <Fragment>
             <div className={"col-12 col-sm-4"}>
@@ -15,13 +29,17 @@ const Header = ({instituicao}) => {
 
                 <span className={COLORS.TEXT_1}>Contato: </span>
                 <span className={COLORS.TEXT_4}>{
-                    instituicao.contato!=null && instituicao.contato.logradouro+", "+instituicao.contato.numero+" - "+instituicao.contato.cidade}</span>
+                    checkNull(instituicao.contato.logradouro,(`${instituicao.contato.logradouro} ${instituicao.contato.numero} ${instituicao.contato.cidade}`))}</span>
                 <br/>
                 <span className={COLORS.TEXT_1}>Telefone: </span>
-                <span className={COLORS.TEXT_4}>{instituicao.contato.telefone}</span>
+                <span className={COLORS.TEXT_4}>
+                    {checkNull(instituicao.contato.telefone)}
+                </span>
                 <br/>
                 <span className={COLORS.TEXT_1}>Email: </span>
-                <span className={COLORS.TEXT_4}>{instituicao.contato.email}</span>
+                <span className={COLORS.TEXT_4}>
+                    {checkNull(instituicao.contato.telefone)}
+                </span>
 
                 <br/><br/>
                 <span className={COLORS.TEXT_1}>Municipio de atuação: </span>
@@ -31,7 +49,9 @@ const Header = ({instituicao}) => {
                 <span className={COLORS.TEXT_4}>&nbsp;{instituicao.causa.causa}</span>
             </div>
             <div className={"col-12 col-sm-2 px-2"}>
-                <a type={"button"} href={instituicao.doarLink} onClick={()=>postDoacao(instituicao.id)} target="_blank"
+                <a type={"button"} href={instituicao.doarLink} onClick={(e)=> {
+                    return instituicao.doarLink!==null?instituicao.id:doarLinkToggler()
+                }} target="_blank"
                    className={"btn btn-primary mb-2 nav-link"} id={"doar"} data-toggle={"tooltip"} title={disclaimer}>
                     Doar agora!
                 </a>
@@ -43,5 +63,19 @@ const Header = ({instituicao}) => {
         </Fragment>
     );
 };
+Header.defaultProps = {
+    instituicao:{
+        cidade:"Não disponivel",
+        causa:{causa:"Não disponivel"},
+        contato:{
+            logradouro:"Não disponivel",
+            numero:"",
+            cidade:"",
+            telefone:"Não disponivel",
+            email:"Não disponivel",
+
+        }
+    }
+}
 
 export default Header;

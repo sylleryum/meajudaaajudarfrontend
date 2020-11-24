@@ -17,7 +17,8 @@ const {data} = require('../../util/dumb');
 const COLORS = require('../../util/colorScheme');
 const InstituicaoPage = () => {
     let {id} = useParams();
-    /*context*/const {error, setError} = useContext(ErrorContext)
+    /*context*/
+    const {error, setError} = useContext(ErrorContext)
 
     const [instituicao, setInstituicao] = useState({
         "id": undefined,
@@ -29,20 +30,35 @@ const InstituicaoPage = () => {
         "sobre": "",
         "url": "",
         "doarLink": "",
+        "infoDoacao":null,
         "contato": {"id": undefined, "email": "", "logradouro": "", "numero": undefined, "telefone": "", "cidade": ""}
     })
 
     useEffect(() => {
         async function fetch() {
             //setInstituicao(await getSingleInstituicao("dumb"))
-            let instituicao = await getSingleInstituicao(id);
-            if (instituicao.error != undefined) {
+            let instituicaoReturn = await getSingleInstituicao(id);
+            if (instituicaoReturn.error != undefined) {
                 setError({
                     error: true,
-                    errorMessage: instituicao.errorMessage
+                    errorMessage: instituicaoReturn.errorMessage
                 })
             } else {
-                setInstituicao(instituicao)
+                if (instituicaoReturn.contato === null) {
+                    setInstituicao({
+                        ...instituicaoReturn,
+                        "contato": {
+                            "id": "Não disponivel",
+                            "email": "Não disponivel",
+                            "logradouro": "Não disponivel",
+                            "numero": "",
+                            "telefone": "Não disponivel",
+                            "cidade": ""
+                        }
+                    })
+                } else {
+                    setInstituicao(instituicaoReturn)
+                }
             }
         }
 
@@ -64,7 +80,7 @@ const InstituicaoPage = () => {
                         </div>
 
                         <div id={"tabs-container"} className={"row justify-content-center"}>
-                            <Tabs descricao={instituicao.descricao} sobre={instituicao.sobre} id={instituicao.id}/>
+                            <Tabs descricao={instituicao.descricao} sobre={instituicao.sobre} id={instituicao.id} infoDoacao={instituicao.infoDoacao} />
                         </div>
                     </Fragment>}
             </section>

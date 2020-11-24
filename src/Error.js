@@ -8,7 +8,9 @@ const Error = ({errorMessage, descriptionMain, descriptionSub}) => {
         <div className={"square row align-items-center justify-content-center text-center"}>
             <h3>Deu ruim ¯\_(ツ)_/¯</h3>
             <span>{descriptionMain}</span>
+            <div className={"width-100"}/>
             <h3 className={TEXT_1}>{descriptionSub}</h3>
+            <div className={"width-100"}/>
             <div>Erro: {errorMessage}</div>
         </div>
         </div>

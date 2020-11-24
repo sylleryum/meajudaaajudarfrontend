@@ -9,7 +9,7 @@ import AboutPage from "./components/about/AboutPage";
 import Footer from "./components/Footer";
 import Error from "./Error";
 import {
-    BrowserRouter as Router,
+    HashRouter,
     Switch,
     Route,
     Link
@@ -27,16 +27,16 @@ const App = () => {
 
 
     return (
-        <Router>
+        <HashRouter>
             <div className={"main-container"}>
                 <Navbar ListOfLinks={headerLinks}/>
                 <ErrorContext.Provider value={{error, setError}}>
                     {!error.error ?
                         <Switch>
-                            <Route exact path="/" children={<HomePage/>}/>
-                            <Route exact path="/busca" children={<BuscarPage/>}/>
-                            <Route exact path="/instituicao/:id" children={<InstituicaoPage/>}/>
-                            <Route exact path="/sobre" children={<AboutPage/>}/>
+                            <Route exact path="/" component={HomePage}/>
+                            <Route exact path="/busca" component={BuscarPage}/>
+                            <Route exact path="/instituicao/:id" component={InstituicaoPage}/>
+                            <Route exact path="/sobre" component={AboutPage}/>
                             <Route children={<Error errorMessage={"404 página não encontrada"}/>}/>
                         </Switch>
                         : <Error errorMessage={error.errorMessage}
@@ -46,8 +46,7 @@ const App = () => {
             </div>
 
             <Footer/>
-
-        </Router>
+        </HashRouter>
     );
 };
 

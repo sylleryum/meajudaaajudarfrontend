@@ -1,5 +1,6 @@
 import React from 'react';
 import {AiFillTag} from "react-icons/ai";
+import {Link} from "react-router-dom";
 const COLORS = require('../../util/colorScheme');
 
 const CardSingle = ({img, title, desc, linkInstituicao, tag}) => {
@@ -12,7 +13,7 @@ const CardSingle = ({img, title, desc, linkInstituicao, tag}) => {
                     <div className={COLORS.BG_5+" box-part text-center pb-1 pt-1"}>
 
                         <img className={"img-fluid"}
-                             src={img}/>
+                             src={img} alt={title}/>
 
                         <div className={" pt-3 title"}>
                             <h4>{title}</h4>
@@ -22,7 +23,7 @@ const CardSingle = ({img, title, desc, linkInstituicao, tag}) => {
                                     <span>{desc}</span>
                         </div>
 
-                        <a className={"stretched-link"} target={"_blank"} href={linkInstituicao}></a>
+                        <Link className={"stretched-link"} target={"_blank"} to={linkInstituicao}></Link>
 
 
                     </div>

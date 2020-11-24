@@ -28,10 +28,17 @@ async function ApiCaller(resource) {
         return res.data
     } catch (error) {
         console.error(`error`)
+        let debug = error.data;
         console.log(error)
+        let errorToReturn;
+        if (error.response!==undefined){
+            errorToReturn = error.response.data.errorMessage
+        }
+        errorToReturn += error.toString()
         return {
+            // if ()
             error: true,
-            errorMessage: error.toString()
+            errorMessage: errorToReturn
         }
         // throw new Error(error.response)
     }
