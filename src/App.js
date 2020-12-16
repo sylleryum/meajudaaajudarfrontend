@@ -1,4 +1,4 @@
-import React, {Component, Fragment, useState} from 'react';
+import React, {Component, Fragment, useEffect, useState} from 'react';
 import './App.css';
 import Navbar from "./components/Navbar";
 import BuscarPage, {CidadeContext} from "./components/buscarPage/BuscarPage";
@@ -8,6 +8,8 @@ import HomePage from "./components/home/HomePage";
 import AboutPage from "./components/about/AboutPage";
 import Footer from "./components/Footer";
 import Error from "./Error";
+import ReactGA from "react-ga";
+import { createBrowserHistory } from 'history';
 import {
     HashRouter,
     Switch,
@@ -19,6 +21,19 @@ export const ErrorContext = createContext(null);
 
 const App = () => {
 
+
+    useEffect(() => {
+        ReactGA.initialize('G-1TYMY0CW5E');
+        ReactGA.pageview(window.location.pathname);
+    })
+    const history = createBrowserHistory();
+    history.listen(location => {
+        ReactGA.initialize('your tracking Id');
+        ReactGA.set({ page: location.pathname }); // Update the user's current page
+        ReactGA.pageview(location.pathname); // Record a pageview for the given page
+    });
+
+
     const [error, setError] = useState({
         error: false,
         errorMessage: 'desconhecido'
@@ -27,7 +42,7 @@ const App = () => {
 
 
     return (
-        <HashRouter>
+        <HashRouter history={history}>
             <div className={"main-container"}>
                 <Navbar ListOfLinks={headerLinks}/>
                 <ErrorContext.Provider value={{error, setError}}>

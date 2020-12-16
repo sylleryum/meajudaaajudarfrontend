@@ -22,7 +22,7 @@ const Header = ({instituicao}) => {
     return (
         <Fragment>
             <div className={"col-12 col-sm-4"}>
-                <img className={"img-fluid"} src={instituicao.imagem} />
+                <img className={"img-fluid"} src={instituicao.imagem} alt={instituicao.nome}/>
             </div>
             <div className={"col-12 col-sm-6 pr-2"}>
 

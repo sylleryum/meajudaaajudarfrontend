@@ -19,7 +19,7 @@ export const faq =
         ["Existe algum custo envolvido? ", "Este site e todo o sistema desenvolvido para o mesmo são 100% gratuitos, não existe nenhum tipo de ganho/cobranças."],
         ["De onde vem a renda para manter o site?", "Este site é mantido com fundos do próprio criador do site."],
         ["O Me ajuda a ajudar precisa de alguma ajuda financeira?", "Em questões financeiras, atualmente não, porém, caso o projeto cresça os custos crescerão também (banco de dados atualmente tem capacidade para ao todo 10000 linhas, quantidade relativamente baixa) e será necessário avaliar custos"],
-        ["Posso colaborar de alguma outra maneira?", "Obrigado pelo interesse! Por favor verifique nesta <a href='https://github.com/sylleryum/meAjudaaAjudar/wiki' target='_blank'>página</a>"],
+        ["Posso colaborar de alguma outra maneira?", "Obrigado pelo interesse! Por favor verifique nesta <a href='https://github.com/sylleryum/meajudaaajudarfrontend/wiki/Proximos-passos' target='_blank'>página</a>"],
         ["(para desenvolvedores) posso usar os dados da API do Me ajuda a ajudar?", "Sim, por favor entre em contato com o criador do site do final da página"],
         ["Quem é o criador da página", "Alisson Piucco Nunes, links de redes sociais na seção contato"],
 
